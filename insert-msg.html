@@ -1,0 +1,30 @@
+<html>
+<body>
+  <input id = "msg" type = "text">
+  <input type = "button" value = "enter" onclick="getMessage()"> 
+  <!--<button onclick="getMessage()">Enter</button>-->
+  <br>
+<table id="myTable">
+</table>
+
+
+
+</body>
+<script type = "text/javascript">
+  var messages = [];
+  var msgg;
+  function getMessage() {
+  var table = document.getElementById("myTable");
+  var row = table.insertRow(0);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  msgg = document.getElementById('msg').value;
+  console.log(msgg);
+  cell1.innerHTML = msgg;
+
+  var btn = document.createElement("BUTTON");
+  btn.appendChild(document.createTextNode("CLICK ME"));
+  cell2.appendChild(btn);
+}
+</script>
+</html>
