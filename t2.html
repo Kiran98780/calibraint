@@ -13,7 +13,7 @@
 <ul>
 
 <h2>Enter Username</h2>
-<li><input type='text' name='text2'/></li>
+<li><input type='text' id="text2"/></li>
 <li>&nbsp;</li>
 
 
@@ -34,9 +34,9 @@
 </ul>
 </form>
 </div>
-<p id= "display">
+<div id= "display">
 
-</p>
+</div>
 
 <script type="text/javascript">
 
@@ -48,22 +48,22 @@ function ValidateEmail()
 	if(validate.match(mailformat))
 	{
 		document.form1.text1.focus();
-		return true;
+		//return true;
 	}
 	else
 	{
 		alert("You have entered an invalid email address!");
 		document.form1.text1.focus();
-		return false;
+		//return false;
 	}
 	var password = document.getElementById("txtPassword").value;
     var confirmPassword = document.getElementById("txtConfirmPassword").value;
     if (password != confirmPassword) 
     {
         alert("Passwords do not match.");
-        return false;
+        //return false;
     }
-        return true;
+        //return true;
 	document.getElementById("display").innerText = document.getElementById('text2').value;
 }
 </script>
