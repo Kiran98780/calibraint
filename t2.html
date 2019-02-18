@@ -13,7 +13,7 @@
 <ul>
 
 <h2>Enter Username</h2>
-<li><input type='text' id="text2"/></li>
+<li><input type='text' id="user"/></li>
 <li>&nbsp;</li>
 
 
@@ -34,10 +34,12 @@
 </ul>
 </form>
 </div>
-<div id= "display">
+<p id= "display1">
 
-</div>
+</p>
+<p id= "display2">
 
+</p>
 <script type="text/javascript">
 
 function ValidateEmail()
@@ -64,7 +66,10 @@ function ValidateEmail()
         //return false;
     }
         //return true;
-	document.getElementById("display").innerText = document.getElementById('text2').value;
+		document.getElementById("display1").innerText = "USERNAME:"+document.getElementById("user").value;
+		document.getElementById("display2").innerText = "EMAIL:"+document.getElementById("vali1").value;
+
+
 }
 </script>
 </body>
