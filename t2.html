@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JavaScript form validation - checking email</title>
+<link rel='stylesheet' href='form-style.css' type='text/css' />      
+</head>
+<!--https://www.w3schools.com/jsref/met_html_focus.asp-->
+<body onload='document.form1.text1.focus()'>
+<div class="mail">
+<!--An action of # indicates that the form stays on the same page, simply suffixing the url with a #. Similar use occurs in anchors. <a href=#">Link</a> for example, will stay on the same page.-->
+<form name="form1" action="#"> 
+<ul>
+<h2>Input an email and Submit</h2>
+//TEXTBOX1
+<li><input type='text' name='text1'/></li>
+<li>&nbsp;</li>
+//BUTTON1
+<li class="submit"><input type="submit" name="submit" value="Submit" onclick="ValidateEmail(document.form1.text1)"/></li>
+<li>&nbsp;</li>
+<h2>Input a password</h2>
+//TEXTBOX2
+<li> <input type="password" id="txtPassword" /></li>
+<li>&nbsp;</li>
+<h2>Confirm password</h2>
+//TEXTBOX3
+<li><input type="password" id="txtConfirmPassword" /></li>
+<li>&nbsp;</li>
+//BUTTON2
+<li class="submit"><input type="button" id="btnSubmit" value="Submit" onclick="return Validate()" /></li>
+<li>&nbsp;</li>
+</ul>
+</form>
+</div>
+
+<script type="text/javascript">
+    function Validate() {
+        var password = document.getElementById("txtPassword").value;
+        var confirmPassword = document.getElementById("txtConfirmPassword").value;
+        if (password != confirmPassword) {
+            alert("Passwords do not match.");
+            return false;
+        }
+        return true;
+    }
+    function ValidateEmail(inputText)
+{
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+if(inputText.value.match(mailformat))
+{
+document.form1.text1.focus();
+return true;
+}
+else
+{
+alert("You have entered an invalid email address!");
+document.form1.text1.focus();
+return false;
+}
+}
+</script>
+</body>
+</html>
