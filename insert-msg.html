@@ -5,6 +5,8 @@
   <!--<button onclick="getMessage()">Enter</button>-->
   <br>
 <table id="myTable">
+  <tr id="myRow">
+</tr>
 </table>
 
 
@@ -14,17 +16,37 @@
   var messages = [];
   var msgg;
   function getMessage() {
+
+  //create table and insert rows and data
   var table = document.getElementById("myTable");
   var row = table.insertRow(0);
   var cell1 = row.insertCell(0);
   var cell2 = row.insertCell(1);
+  //update content in cell1
   msgg = document.getElementById('msg').value;
   console.log(msgg);
   cell1.innerHTML = msgg;
 
+  //clear the content from the textbox 
+  document.getElementById('msg').value = '';
+
+//update button in cell2
   var btn = document.createElement("BUTTON");
-  btn.appendChild(document.createTextNode("CLICK ME"));
+  btn.appendChild(document.createTextNode("Click to delete row"));
   cell2.appendChild(btn);
+  //btn.id = "button1"
+  //btn.onclick = myFunction();
+
+// if this button is clicked, delete THAT entire row
+
+btn.addEventListener("click", myFunction);
+
+}
+
+function myFunction() {
+  document.getElementById("myTable").deleteRow(0);
 }
 </script>
+
+
 </html>
