@@ -1,0 +1,32 @@
+<html>
+
+<p id = 'promise1'> </p>
+<p id = 'promise2'> </p>
+<p id = 'promise3'> </p>
+
+<script>
+
+
+var promise = new Promise(function(resolve, reject) {
+    setTimeout(function() {
+        resolve('hello world');
+    }, 2000);
+});
+
+promise.then(function(data) {
+	document.getElementById('promise1').innerHTML = data + '1';
+    //console.log(data + ' 1');
+});
+
+promise.then(function(data) {
+	document.getElementById('promise2').innerHTML = data + '2';
+    //console.log(data + ' 2');
+});
+
+promise.then(function(data) {
+	document.getElementById('promise3').innerHTML = data + '3';
+    //console.log(data + ' 3');
+});
+
+</script>
+</html>
