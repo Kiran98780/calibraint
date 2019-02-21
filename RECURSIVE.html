@@ -1,0 +1,27 @@
+ <!DOCTYPE html>
+<html>
+  <body>
+    Enter a number to find the fibonacci series <input type="text" id="fibonacci"><br>
+    <button onclick = "func1()">Enter</button>
+    <p id="myPara">
+    </p>
+    <script>
+      function func1() {
+        let n = document.getElementById("fibonacci").value;
+        let f = fibo(n);
+        console.log(f);
+        // document.getElementById("myPara").innerHTML = "The fibonacci series of" + n + "is" + f;
+      }
+
+      function fibo(n) {
+        if (n<=1) { 
+          return n; 
+        } else {
+          return fibo(n - 1) + fibo(n - 2); 
+        }
+      }
+
+  </script>
+</body>
+
+</html>
